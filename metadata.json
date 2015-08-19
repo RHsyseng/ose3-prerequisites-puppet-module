@@ -1,7 +1,7 @@
 {
-  "name": "ose3-prerequisites",
-  "version": "0.1.0",
-  "author": "amce-itops",
+  "name": "RHsyseng-ose3prerequisites",
+  "version": "0.1.1",
+  "author": "ACME Corp IT-Ops",
   "summary": "set up OpenShift Enterprise 3 prerequisites",
   "license": "LGPL-3.0",
   "source": "https://github.com/goern/ose3-prerequisites-puppet-module",
