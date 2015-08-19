@@ -1,6 +1,6 @@
 {
   "name": "RHsyseng-ose3prerequisites",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "ACME Corp IT-Ops",
   "summary": "set up OpenShift Enterprise 3 prerequisites",
   "license": "LGPL-3.0",
