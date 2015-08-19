@@ -1,16 +1,14 @@
 {
   "name": "ose3-prerequisites",
-  "version": "1.0.0",
-  "author": "Red Hat GmbH",
-  "summary": "This puppet modules ensures that OSE3 prerequisites are meet. It is should be used with RH Sat6",
-  "license": "LGPL 2.0",
-  "source": "https://github.com/RHsyseng/ose3-prerequisites-puppet-module",
-  "issues_url": null,
-  "project_page": null,
+  "version": "0.1.0",
+  "author": "amce-itops",
+  "summary": "set up OpenShift Enterprise 3 prerequisites",
+  "license": "LGPL-3.0",
+  "source": "https://github.com/goern/ose3-prerequisites-puppet-module",
+  "project_page": "https://github.com/goern/ose3-prerequisites-puppet-module",
+  "issues_url": "https://github.com/goern/ose3-prerequisites-puppet-module/issues",
   "dependencies": [
-    {
-      "name": "puppetlabs-stdlib",
-      "version_range": ">= 1.0.0"
-    }
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
   ]
 }
+
