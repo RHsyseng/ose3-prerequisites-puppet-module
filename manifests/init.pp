@@ -36,8 +36,7 @@
 # Copyright 2015 Your name here, unless otherwise noted.
 #
 class ose3prerequisites {
- package { "NetworkManager":
-     ensure => "absent",
-  }
+  package { "NetworkManager-tui": ensure => "absent" }
+  package { "NetworkManager": ensure => "absent" }
 
 }
