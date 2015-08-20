@@ -35,6 +35,12 @@
 #
 # Copyright 2015 Your name here, unless otherwise noted.
 #
+if versioncmp($::puppetversion,'3.6.1') >= 0 {
+  Package {
+    allow_virtual => true, 
+  }
+}
+
 class ose3prerequisites {
   package { "NetworkManager-team": ensure => "absent" }
   package { "NetworkManager-tui": ensure => "absent" }
