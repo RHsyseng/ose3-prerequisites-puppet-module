@@ -45,4 +45,9 @@ class ose3prerequisites {
   package { "NetworkManager-team": ensure => "absent" }
   package { "NetworkManager-tui": ensure => "absent" }
   package { "NetworkManager": ensure => "absent" }
+
+  exec { "enable NFS r/w":
+    command => "setsebool -P virt_use_nfs 1",
+    path    => [ "/usr/sbin/", "/usr/bin/" ],
+  }
 }
