@@ -1,39 +1,28 @@
 # == Class: prerequisites
 #
-# Full description of class prerequisites here.
+# This class sets some prerequisites of OpenShift Enterprise 3 
 #
 # === Parameters
 #
-# Document parameters here.
-#
-# [*sample_parameter*]
-#   Explanation of what this parameter affects and what it defaults to.
-#   e.g. "Specify one or more upstream ntp servers as an array."
+# None. 
 #
 # === Variables
 #
-# Here you should define a list of variables that this module would require.
-#
-# [*sample_variable*]
-#   Explanation of how this variable affects the function of this class and if
-#   it has a default. e.g. "The parameter enc_ntp_servers must be set by the
-#   External Node Classifier as a comma separated list of hostnames." (Note,
-#   global variables should be avoided in favor of class parameters as
-#   of Puppet 2.6.)
+# None. 
 #
 # === Examples
 #
 #  class { 'prerequisites':
-#    servers => [ 'pool.ntp.org', 'ntp.local.company.com' ],
+#    servers => [ 'node-1.ose3.example.com', 'node-2.ose3.example.com' ],
 #  }
 #
 # === Authors
 #
-# Author Name <author@domain.com>
+# Christoph Görn <goern@redhat.com> 
 #
 # === Copyright
 #
-# Copyright 2015 Your name here, unless otherwise noted.
+# Copyright 2015 Red Hat GmbH 
 #
 if versioncmp($::puppetversion,'3.6.1') >= 0 {
   Package {
@@ -46,8 +35,8 @@ class ose3prerequisites {
   package { "NetworkManager-tui": ensure => "absent" }
   package { "NetworkManager": ensure => "absent" }
 
-  exec { "enable NFS r/w":
-    command => "setsebool -P virt_use_nfs 1",
+  exec { "setting selinux virt_use_nfs true":
+    command => "if [[ $(getsebool virt_use_nfs) == "virt_use_nfs --> off" ]] ; then setsebool -P virt_use_nfs 1 ; fi",
     path    => [ "/usr/sbin/", "/usr/bin/" ],
   }
 }

@@ -1,7 +1,7 @@
 {
   "name": "RHsyseng-ose3prerequisites",
-  "version": "0.1.5",
-  "author": "ACME Corp IT-Ops",
+  "version": "0.1.6",
+  "author": "Red Hat, Inc. - Systems Engineering",
   "summary": "set up OpenShift Enterprise 3 prerequisites",
   "license": "LGPL-3.0",
   "source": "https://github.com/goern/ose3-prerequisites-puppet-module",
@@ -9,7 +9,7 @@
   "issues_url": "https://github.com/goern/ose3-prerequisites-puppet-module/issues",
   "dependencies": [
     {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
-  ]
+  ],
   "operatingsystem_support": [
     {
       "operatingsystem": "RedHat",
