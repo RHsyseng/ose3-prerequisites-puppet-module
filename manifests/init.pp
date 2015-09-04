@@ -1,14 +1,14 @@
 # == Class: prerequisites
 #
-# This class sets some prerequisites of OpenShift Enterprise 3 
+# This class sets some prerequisites of OpenShift Enterprise 3
 #
 # === Parameters
 #
-# None. 
+# None.
 #
 # === Variables
 #
-# None. 
+# None.
 #
 # === Examples
 #
@@ -18,15 +18,15 @@
 #
 # === Authors
 #
-# Christoph Görn <goern@redhat.com> 
+# Christoph Görn <goern@redhat.com>
 #
 # === Copyright
 #
-# Copyright 2015 Red Hat GmbH 
+# Copyright 2015 Red Hat GmbH
 #
 if versioncmp($::puppetversion,'3.6.1') >= 0 {
   Package {
-    allow_virtual => true, 
+    allow_virtual => true,
   }
 }
 
@@ -36,7 +36,7 @@ class ose3prerequisites {
   package { "NetworkManager": ensure => "absent" }
 
   exec { "setting selinux virt_use_nfs true":
-    command => "if [[ $(getsebool virt_use_nfs) == "virt_use_nfs --> off" ]] ; then setsebool -P virt_use_nfs 1 ; fi",
+    command => "if [[ $(getsebool virt_use_nfs) == 'virt_use_nfs --> off' ]] ; then setsebool -P virt_use_nfs 1 ; fi",
     path    => [ "/usr/sbin/", "/usr/bin/" ],
   }
 }
