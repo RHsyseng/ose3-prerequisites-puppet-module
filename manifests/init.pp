@@ -36,7 +36,8 @@ class ose3prerequisites {
   package { "NetworkManager": ensure => "absent" }
 
   exec { "setting selinux virt_use_nfs true":
-    command => "if [[ $(getsebool virt_use_nfs) == 'virt_use_nfs --> off' ]] ; then setsebool -P virt_use_nfs 1 ; fi",
     path    => [ "/usr/sbin/", "/usr/bin/" ],
+    command => "setsebool -P virt_use_nfs true",
+    unless => "getsebool virt_use_nfs | awk '{ print \$3 }' | grep on",
   }
 }
